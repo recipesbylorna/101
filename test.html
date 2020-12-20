@@ -10,12 +10,11 @@ $(document).ready(function(){
         //myJSON = data;
 		console.log(data.title); // Prints: Harry
         console.log(data.subtitle); // Prints: 14
-		document.getElementById("time").innerHTML = data.summary.prep.total;
+		document.getElementById("time").innerHTML = data.title;
     }).fail(function(){
         console.log("An error has occurred.");
     });
 });
-//var parsedJSON = JSON.stringify(myJSON);
 //document.getElementById("time").innerHTML = parsedJSON.summary.prep.total;
 </script>
 
