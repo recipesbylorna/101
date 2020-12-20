@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var myJSON = recipe.json;
+var parsedJSON = JSON.parse(myJSON);
+document.getElementById("time").innerHTML = parsedJSON.summary.prep.total;
+</script>
+
+<h1>Cook time: <span id="time"></span></h1>
+
+</body>
+</html>
