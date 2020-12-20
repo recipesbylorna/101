@@ -6,13 +6,13 @@
 <script>
 var myJSON;
 $(document).ready(function(){
-    $.getJSON("https://recipesbylorna.github.io/101/recipe.json", function(data){
-        myJSON = data;
-		console.log(myJSON.title); // Prints: Harry
-        console.log(myJSON.subtitle); // Prints: 14
-    }).fail(function(){
-        console.log("An error has occurred.");
-    });
+	$.getJSON("/recipe.json", function(data){
+		myJSON = data;
+		console.log(myJSON.title); // Prints: Lorna's Luscious Lasagna
+		console.log(myJSON.subtitle); // Prints: Delicious!
+	}).fail(function(){
+		console.log("An error has occurred.");
+	});
 });
 document.getElementById("time").innerHTML = myJSON.title;
 </script>
