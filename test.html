@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 
 <script>
-var myJSON = '/recipe.json';
+var myJSON;
+$(document).ready(function(){
+    $.getJSON("https://recipesbylorna.github.io/101/recipe.json", function(data){
+        myJSON = data;
+		console.log(data.title); // Prints: Harry
+        console.log(data.subtitle); // Prints: 14
+    }).fail(function(){
+        console.log("An error has occurred.");
+    });
+});
 var parsedJSON = JSON.parse(myJSON);
 document.getElementById("time").innerHTML = parsedJSON.summary.prep.total;
 </script>
