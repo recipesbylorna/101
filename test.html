@@ -4,15 +4,15 @@
 
 <script>
 var myJSON;
-	$(document).ready(function(){
-        $.getJSON("https://recipesbylorna.github.io/101/recipe.json", function(data){
-            myJSON = data;
-			console.log(data.title); // Prints: Harry
-            console.log(data.subtitle); // Prints: 14
-        }).fail(function(){
-            console.log("An error has occurred.");
-        });
+$(document).ready(function(){
+    $.getJSON("https://recipesbylorna.github.io/101/recipe.json", function(data){
+        myJSON = data;
+		console.log(data.title); // Prints: Harry
+        console.log(data.subtitle); // Prints: 14
+    }).fail(function(){
+        console.log("An error has occurred.");
     });
+});
 var parsedJSON = JSON.parse(data);
 document.getElementById("time").innerHTML = parsedJSON.summary.prep.total;
 </script>
