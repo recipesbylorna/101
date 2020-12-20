@@ -6,7 +6,7 @@
 <script>
 var myJSON;
 $(document).ready(function(){
-	$.getJSON("/recipe.json", function(data){
+	$.getJSON("/101/recipe.json", function(data){
 		myJSON = data;
 		console.log(myJSON.title); // Prints: Lorna's Luscious Lasagna
 		console.log(myJSON.subtitle); // Prints: Delicious!
