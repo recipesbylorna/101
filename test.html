@@ -5,16 +5,19 @@
 
 <script>
 var myJSON;
+function updateTitle() {
+	document.getElementById("time").innerHTML = myJSON.title;
+}
 $(document).ready(function(){
-	$.getJSON("/101/recipe.json", function(data){
+	$.getJSON("/101/recipe.json?r="+(new Date).getTime(), function(data){
 		myJSON = data;
+		updateTitle();
 		console.log(myJSON.title); // Prints: Lorna's Luscious Lasagna
 		console.log(myJSON.subtitle); // Prints: Delicious!
 	}).fail(function(){
 		console.log("An error has occurred.");
 	});
 });
-document.getElementById("time").innerHTML = myJSON.title;
 </script>
 
 <h1>Cook time: <span id="time"></span></h1>
