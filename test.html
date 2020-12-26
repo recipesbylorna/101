@@ -11,7 +11,7 @@
 <script>
 var myJSON;
 function updateTitle() {
-	document.getElementById("time").innerHTML = myJSON.title;
+	document.getElementById("time").innerHTML = myJSON.summary.total;
 }
 $(document).ready(function(){
 	$.getJSON("/101/recipe.json?r="+(new Date).getTime(), function(data){
