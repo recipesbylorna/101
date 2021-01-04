@@ -9,12 +9,8 @@
          var recipeIndex = 300;
          function incrementRecipe(incrementor) {
             recipeIndex += incrementor;
-            if (recipeIndex < 0) {
-               recipeIndex = myJSON.recipes.length - 1;
-            }
-            if (recipeIndex > myJSON.recipes.length - 1) {
-               recipeIndex = 0;
-            }
+            recipeIndex = (((recipeIndex % myJSON.recipes.length) + myJSON.recipes.length) % myJSON.recipes.length);
+            
             updateRecipe(recipeIndex);
          }
          function updateRecipe(recipeNum) {
