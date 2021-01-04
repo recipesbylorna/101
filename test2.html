@@ -7,8 +7,14 @@
       <script>
          var myJSON;
          var recipeIndex = 0;
-         function incrementRecipe() {
-            recipeIndex++;
+         function incrementRecipe(incrementor) {
+            recipeIndex += incrementor;
+            if (recipeIndex < 0) {
+               recipeIndex = myJSON.recipes.length - 1;
+            }
+            if (recipeIndex > myJSON.recipes.length - 1) {
+               recipeIndex = 0;
+            }
             updateRecipe(recipeIndex);
          }
          function updateRecipe(recipeNum) {
@@ -68,7 +74,7 @@
           });
          });
       </script>
-      <button type="button" onclick="incrementRecipe()">CLICK ME!!!</button>
+      <button type="button" onclick="incrementRecipe(1)" oncontextmenu="incrementRecipe(-1)">CLICK ME!!!</button>
       <h1>Title: <span id="name"></span></h1>
       <h3>Category: <span id="category"></span></h3>
       <h3>Main Ingredient: <span id="mainIng"></span></h3>
