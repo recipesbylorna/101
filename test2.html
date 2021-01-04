@@ -22,7 +22,7 @@
             updateNotes(recipeNum);
             updateIngredients(recipeNum);
             updateInstructions(recipeNum);
-            checkEmpty();
+            checkEmpty(recipeNum);
          }   
          function updateName(recipeNum) {
             document.getElementById("name").innerHTML = myJSON.recipes[recipeNum].name;
@@ -63,8 +63,8 @@
          function updateInstructions(recipeNum) {
             document.getElementById("instructions").innerHTML = myJSON.recipes[recipeNum].instructions;
          }
-         function checkEmpty() {
-            yieldAmount = myJSON.recipes[recipeIndex].yieldAmount;
+         function checkEmpty(recipeNum) {
+            yieldAmount = myJSON.recipes[recipeNum].yieldAmount;
             if (yieldAmount.localeCompare("") != 0) {
                document.getElementById("yield").innerHTML = "";
             }
