@@ -6,13 +6,49 @@
    <body>
       <script>
          var myJSON;
-         function updateTitle() {
+         function updateRecipe() {
+            updateName();
+            updateCategory();
+            updateMainIng();
+            updateYieldAmount();
+            updateYieldType();
+            updateNotes();
+            updateIngredients();
+            updateInstructions():
+         }   
+         function updateName() {
             document.getElementById("name").innerHTML = myJSON.recipes[0].name;
+         }
+         function updateCategory() {
+            document.getElementById("category").innerHTML = myJSON.recipes[0].category;
+         }
+         function updateMainIng() {
+            document.getElementById("mainIng").innerHTML = myJSON.recipes[0].mainIng;
+         }
+         function updateYieldAmount() {
+            document.getElementById("yieldAmount").innerHTML = myJSON.recipes[0].yieldAmount;
+         }
+         function updateYieldType() {
+            document.getElementById("yieldType").innerHTML = myJSON.recipes[0].yieldType;
+         }
+         function updateNotes() {
+            document.getElementById("notes").innerHTML = myJSON.recipes[0].notes;
+         }
+         function updateIngredients() {
+            let x = "";
+            let i;
+            for (i = 0; i < myJSON.recipes[0].ingredients.length; i++) {
+               x += myJSON.recipes[0].ingredients[i] + "<br>";
+            }
+            document.getElementById("ingredients").innerHTML = x;
+         }
+         function updateInstructions() {
+            document.getElementById("instructions").innerHTML = myJSON.recipes[0].instructions;
          }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
              myJSON = inputJSON;
-             updateTitle();
+             updateRecipe();
            }).fail(function(){
            console.log("An error has occurred.");
           });
