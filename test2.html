@@ -6,7 +6,7 @@
    <body>
       <script>
          var myJSON;
-         var recipeIndex = 0;
+         var recipeIndex = 300;
          function incrementRecipe(incrementor) {
             recipeIndex += incrementor;
             if (recipeIndex < 0) {
@@ -74,8 +74,8 @@
           });
          });
       </script>
-      <button type="button" onclick="incrementRecipe(1)">Go Forward One</button>
       <button type="button" onclick="incrementRecipe(-1)">Go Back One</button>
+      <button type="button" onclick="incrementRecipe(1)">Go Forward One</button>
       <h1>Title: <span id="name"></span></h1>
       <h3>Category: <span id="category"></span></h3>
       <h3>Main Ingredient: <span id="mainIng"></span></h3>
