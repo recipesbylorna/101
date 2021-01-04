@@ -12,10 +12,10 @@
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
              myJSON = inputJSON;
+             updateTitle();
            }).fail(function(){
            console.log("An error has occurred.");
           });
-            updateTitle();
          });
       </script>
       <h1>Title: <span id="name"></span></h1>
