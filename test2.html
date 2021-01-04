@@ -6,43 +6,44 @@
    <body>
       <script>
          var myJSON;
-         function updateRecipe() {
-            updateName();
-            updateCategory();
-            updateMainIng();
-            updateYieldAmount();
-            updateYieldType();
-            updateNotes();
-            updateIngredients();
-            updateInstructions();
+         var recipeNum = 0;
+         function updateRecipe(recipeNum) {
+            updateName(recipeNum);
+            updateCategory(recipeNum);
+            updateMainIng(recipeNum);
+            updateYieldAmount(recipeNum);
+            updateYieldType(recipeNum);
+            updateNotes(recipeNum);
+            updateIngredients(recipeNum);
+            updateInstructions(recipeNum);
          }   
-         function updateName() {
-            document.getElementById("name").innerHTML = myJSON.recipes[0].name;
+         function updateName(recipeNum) {
+            document.getElementById("name").innerHTML = myJSON.recipes[recipeNum].name;
          }
-         function updateCategory() {
-            document.getElementById("category").innerHTML = myJSON.recipes[0].category;
+         function updateCategory(recipeNum) {
+            document.getElementById("category").innerHTML = myJSON.recipes[recipeNum].category;
          }
-         function updateMainIng() {
-            document.getElementById("mainIng").innerHTML = myJSON.recipes[0].mainIng;
+         function updateMainIng(recipeNum) {
+            document.getElementById("mainIng").innerHTML = myJSON.recipes[recipeNum].mainIng;
          }
-         function updateYieldAmount() {
-            document.getElementById("yieldAmount").innerHTML = myJSON.recipes[0].yieldAmount;
+         function updateYieldAmount(recipeNum) {
+            document.getElementById("yieldAmount").innerHTML = myJSON.recipes[recipeNum].yieldAmount;
          }
-         function updateYieldType() {
-            document.getElementById("yieldType").innerHTML = myJSON.recipes[0].yieldType;
+         function updateYieldType(recipeNum) {
+            document.getElementById("yieldType").innerHTML = myJSON.recipes[recipeNum].yieldType;
          }
-         function updateNotes() {
-            document.getElementById("notes").innerHTML = myJSON.recipes[0].notes;
+         function updateNotes(recipeNum) {
+            document.getElementById("notes").innerHTML = myJSON.recipes[recipeNum].notes;
          }
-         function updateIngredients() {
+         function updateIngredients(recipeNum) {
             let x = "";
             let quantity;
             let ingredient;
             let preparation;
-            for (let i = 0; i < myJSON.recipes[0].ingredients.length; i++) {
-               quantity = myJSON.recipes[0].ingredients[i].quantity;
-               ingredient = myJSON.recipes[0].ingredients[i].ingredient;
-               preparation = myJSON.recipes[0].ingredients[i].preparation;
+            for (let i = 0; i < myJSON.recipes[recipeNum].ingredients.length; i++) {
+               quantity = myJSON.recipes[recipeNum].ingredients[i].quantity;
+               ingredient = myJSON.recipes[recipeNum].ingredients[i].ingredient;
+               preparation = myJSON.recipes[recipeNum].ingredients[i].preparation;
                x += quantity + " " + ingredient;
                if (preparation.localeCompare("") != 0) {
                   x += " - " + preparation;
@@ -51,8 +52,8 @@
             }
             document.getElementById("ingredients").innerHTML = x;
          }
-         function updateInstructions() {
-            document.getElementById("instructions").innerHTML = myJSON.recipes[0].instructions;
+         function updateInstructions(recipeNum) {
+            document.getElementById("instructions").innerHTML = myJSON.recipes[recipeNum].instructions;
          }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
