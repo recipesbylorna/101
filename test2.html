@@ -33,7 +33,8 @@
             document.getElementById("mainIng").innerHTML = myJSON.recipes[recipeNum].mainIng;
          }
          function updateYieldAmount(recipeNum) {
-            document.getElementById("yieldAmount").innerHTML = myJSON.recipes[recipeNum].yieldAmount;
+            yieldAmount = myJSON.recipes[recipeNum].yieldAmount;
+            document.getElementById("yieldAmount").innerHTML = yieldAmount;
             if (yieldAmount.localeCompare("") != 0) {
                document.getElementById("yield").innerHTML = "";
             }
