@@ -44,7 +44,7 @@
                quantity = myJSON.recipes[0].ingredients[i].quantity;
                ingredient = myJSON.recipes[0].ingredients[i].ingredient;
                preparation = myJSON.recipes[0].ingredients[i].preparation;
-               if (preparation.localCompare("")) {
+               if (preparation.localeCompare("")) {
                    x += quantity + " " + ingredient + "<br>";
                }
                else {
