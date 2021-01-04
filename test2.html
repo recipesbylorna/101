@@ -6,7 +6,7 @@
    <body>
       <script>
          var myJSON;
-         var recipeNum = 0;
+         var recipeIndex = 0;
          function updateRecipe(recipeNum) {
             updateName(recipeNum);
             updateCategory(recipeNum);
@@ -58,7 +58,7 @@
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
              myJSON = inputJSON;
-             updateRecipe();
+             updateRecipe(recipeIndex);
            }).fail(function(){
            console.log("An error has occurred.");
           });
