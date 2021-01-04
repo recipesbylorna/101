@@ -64,7 +64,7 @@
             document.getElementById("instructions").innerHTML = myJSON.recipes[recipeNum].instructions;
          }
          function checkEmpty() {
-            yieldAmount = myJSON.recipes[recipeNum].yieldAmount;
+            yieldAmount = myJSON.recipes[recipeIndex].yieldAmount;
             if (yieldAmount.localeCompare("") != 0) {
                document.getElementById("yield").innerHTML = "";
             }
