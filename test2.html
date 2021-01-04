@@ -43,8 +43,13 @@
             for (i = 0; i < myJSON.recipes[0].ingredients.length; i++) {
                quantity = myJSON.recipes[0].ingredients[i].quantity;
                ingredient = myJSON.recipes[0].ingredients[i].ingredient;
-               preparation = myJSON.recipes[0].ingredients[i];
-               x += quantity + " " + ingredient + " - " + preparation + "<br>";
+               preparation = myJSON.recipes[0].ingredients[i].preparation;
+               if (preparation.localCompare("") {
+                   x += quantity + " " + ingredient + "<br>";
+               }
+               else {
+                   x += quantity + " " + ingredient + " - " + preparation + "<br>";
+               }
             }
             document.getElementById("ingredients").innerHTML = x;
          }
