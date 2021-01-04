@@ -1,1 +1,19 @@
-
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   </head>
+   <body>
+      <script>
+         var myJSON;
+         $(document).ready(function(){
+           $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
+             myJSON = inputJSON;
+           }).fail(function(){
+           console.log("An error has occurred.");
+          });
+         });
+      </script>
+      <h1>Title: <span id="title"></span></h1>
+   </body>
+</html>
