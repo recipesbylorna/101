@@ -155,7 +155,7 @@
         },
         {
           "quantity":"",
-          "ingredient":"Tomtato Cubes",
+          "ingredient":"Tomato Cubes",
           "preparation":"",
           "identifier":""
         }
@@ -1341,7 +1341,7 @@
     {
       "name":"Banana Bars",
       "category":"Cookies",
-      "mainIng":"Potatoes",
+      "mainIng":"Bananas",
       "yieldAmount":"2",
       "yieldType":"Servings",
       "notes":"",
