@@ -6,7 +6,7 @@
    <body>
       <script>
          var myJSON;
-         var recipeIndex = 300;
+         var recipeIndex = 0;
          function incrementRecipe(incrementor) {
             recipeIndex += incrementor;
             recipeIndex = (((recipeIndex % myJSON.recipes.length) + myJSON.recipes.length) % myJSON.recipes.length);
