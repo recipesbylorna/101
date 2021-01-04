@@ -68,6 +68,7 @@
             if (yieldAmount.localeCompare("") != 0) {
                document.getElementById("yield").innerHTML = "";
             }
+         }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
              myJSON = inputJSON;
