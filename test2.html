@@ -37,8 +37,14 @@
          function updateIngredients() {
             let x = "";
             let i;
+            let quantity;
+            let ingredient;
+            let preparation;
             for (i = 0; i < myJSON.recipes[0].ingredients.length; i++) {
-               x += myJSON.recipes[0].ingredients[i] + "<br>";
+               quantity = myJSON.recipes[0].ingredients[i].quantity;
+               ingredient = myJSON.recipes[0].ingredients[i].ingredient;
+               preparation = myJSON.recipes[0].ingredients[i];
+               x += quantity + " " + ingredient + " - " + preparation + "<br>";
             }
             document.getElementById("ingredients").innerHTML = x;
          }
