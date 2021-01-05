@@ -72,6 +72,24 @@
             else {
                yield.style.display = "block";
             }
+            
+            let noteBlock = document.getElementById("noteBlock");
+            let notes = myJSON.recipes[recipeNum].notes;
+            if (notes.localeCompare("") == 0) {
+               noteBlock.style.display = "none";
+            }
+            else {
+               noteBlock.style.display = "block";
+            }
+            
+            let instructionBlock = document.getElementById("instructionBlock")'
+            let instructions = myJSON.recipes[recipeNum].instructions;
+            if (instructions.localeCompare("") == 0) {
+               instructionBlock.style.display = "none";
+            }
+            else {
+               instructionBlock.style.display = "block";
+            }
          }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
@@ -88,10 +106,10 @@
       <h3>Category: <span id="category"></span></h3>
       <h3>Main Ingredient: <span id="mainIng"></span></h3>
       <h3 id="yield">Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h3>
-      <h2>Notes: <span id="notes"></span></h2>
+      <h2 id="noteBlock">Notes: <span id="notes"></span></h2>
       <h2>Ingredients:</h2>
       <h3><span id="ingredients"></span></h3>
-      <h2>Instructions:</h2>
+      <h2 id="instructionBlock">Instructions:</h2>
       <p><span id="instructions"></span></p>
    </body>
 </html>
