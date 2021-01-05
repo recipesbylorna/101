@@ -69,6 +69,9 @@
             if (yieldAmount.localeCompare("") == 0) {
                yield.style.display = "none";
             }
+            else {
+               yield.style.display = "block";
+            }
          }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
