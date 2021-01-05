@@ -22,6 +22,7 @@
             updateNotes(recipeNum);
             updateIngredients(recipeNum);
             updateInstructions(recipeNum);
+            checkEmpty(recipeNum);
          }   
          function updateName(recipeNum) {
             document.getElementById("name").innerHTML = myJSON.recipes[recipeNum].name;
@@ -62,6 +63,13 @@
          function updateInstructions(recipeNum) {
             document.getElementById("instructions").innerHTML = myJSON.recipes[recipeNum].instructions;
          }
+         function checkEmpty(recipeNum) {
+            let yield = document.getElementById("yield");
+            let yieldAmount = myJSON.recipes[recipeNum].yieldAmount;
+            if (yieldAmount.localeCompare("") == 0) {
+               yield.style.display = "none";
+            }
+         }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
              myJSON = inputJSON;
@@ -76,7 +84,7 @@
       <h1>Title: <span id="name"></span></h1>
       <h3>Category: <span id="category"></span></h3>
       <h3>Main Ingredient: <span id="mainIng"></span></h3>
-      <h3>Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h3>
+      <h3 id="yield">Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h3>
       <h2>Notes: <span id="notes"></span></h2>
       <h2>Ingredients:</h2>
       <h3><span id="ingredients"></span></h3>
