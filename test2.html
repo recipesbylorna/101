@@ -95,7 +95,7 @@
                instructionBlock.style.display = "block";
             }
             
-            let mainIngBlock = document.getElementById("mainIng");
+            let mainIngBlock = document.getElementById("mainIngBlock");
             let mainIng = myJSON.recipes[recipeNum].mainIng;
             if (mainIng.localeCompare("") == 0) {
                mainIngBlock.style.display = "none";
@@ -121,7 +121,7 @@
          <h1 id="name"></h1>
          <p id="category"></p>
       </div>
-      <h3>Main Ingredient: <span id="mainIng"></span></h3>
+      <h3 id="mainIngBlock">Main Ingredient: <span id="mainIng"></span></h3>
       <h3 id="yield">Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h3>
       <h2 id="noteBlock">Notes: <span id="notes"></span></h2>
       <h2>Ingredients:</h2>
