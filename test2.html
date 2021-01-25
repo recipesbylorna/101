@@ -94,6 +94,15 @@
             else {
                instructionBlock.style.display = "block";
             }
+            
+            let mainIngBlock = document.getElementById("mainIng");
+            let mainIng = myJSON.recipes[recipeNum].mainIng;
+            if (mainIng.localeCompare("") == 0) {
+               mainIngBlock.style.display = "none";
+            }
+            else {
+               mainIngBlock.style.display = "block";
+            }
          }
          $(document).ready(function(){
            $.getJSON("/101/OUTPUT.JSON?r="+(new Date).getTime(), function(inputJSON){
