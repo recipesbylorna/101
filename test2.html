@@ -106,8 +106,10 @@
       </script>
       <button type="button" onclick="incrementRecipe(-1)">Go Back One</button>
       <button type="button" onclick="incrementRecipe(1)">Go Forward One</button>
-      <h1>Title: <span id="name"></span></h1>
-      <h3>Category: <span id="category"></span></h3>
+      <div class="jumbotron text-center">
+         <h1 id="name"></h1>
+         <p id="category"></p>
+      </div>
       <h3>Main Ingredient: <span id="mainIng"></span></h3>
       <h3 id="yield">Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h3>
       <h2 id="noteBlock">Notes: <span id="notes"></span></h2>
