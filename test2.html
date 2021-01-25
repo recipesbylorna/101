@@ -135,21 +135,26 @@
             </ul>
          </div>
       </nav>
+      
       <div class="text-center">
          <button type="button" class="btn btn-info" onclick="incrementRecipe(-1)">Go Back One</button>
          <button type="button" class="btn btn-info" onclick="incrementRecipe(1)">Go Forward One</button>
       </div>
+      
       <div class="jumbotron text-center">
          <h1 id="name"></h1>
          <p id="category"></p>
-      </div class="text-left">
+      </div>
+      
+      <div class="text-left">
          <h4 id="mainIngBlock">Main Ingredient: <span id="mainIng"></span></h4>
          <h4 id="yield">Makes <span id="yieldAmount"></span> <span id="yieldType"></span></h4>
-      <div>
       </div>
+      
       <h2 id="noteBlock">Notes: <span id="notes"></span></h2>
-      <h2>Ingredients:</h2>
-      <div class="row">
+      
+      <h2 class="text-center">Ingredients:</h2>
+      <div class="row text-center">
          <div class="col-sm-6">
             <span id="ingredients1"></span>
          </div>
@@ -157,6 +162,7 @@
             <span id="ingredients2"></span>
          </div>
       </div>
+      
       <h2 id="instructionBlock">Instructions:</h2>
       <p><span id="instructions"></span></p>
    </body>
