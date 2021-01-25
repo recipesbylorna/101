@@ -48,7 +48,8 @@
             document.getElementById("notes").innerHTML = myJSON.recipes[recipeNum].notes;
          }
          function updateIngredients(recipeNum) {
-            let x = "";
+            let x1 = "";
+            let x2 = "";
             let quantity;
             let ingredient;
             let preparation;
@@ -56,13 +57,22 @@
                quantity = myJSON.recipes[recipeNum].ingredients[i].quantity;
                ingredient = myJSON.recipes[recipeNum].ingredients[i].ingredient;
                preparation = myJSON.recipes[recipeNum].ingredients[i].preparation;
-               x += quantity + " " + ingredient;
-               if (preparation.localeCompare("") != 0) {
-                  x += " - " + preparation;
+               x1 += quantity + " " + ingredient;
+               if (i < myJSON.recipes[recipeNum].ingredients.length / 2) {
+                  if (preparation.localeCompare("") != 0) {
+                     x1 += " - " + preparation;
+                  }
+                  x1 += "<br>";
                }
-               x += "<br>";
+               else {
+                  if (preparation.localeCompare("") != 0) {
+                     x2 += " - " + preparation;
+                  }
+                  x2 += "<br>";
+               }
             }
-            document.getElementById("ingredients").innerHTML = x;
+            document.getElementById("ingredients1").innerHTML = x1;
+            document.getElementById("ingredients2").innerHTML = x2;
          }
          function updateInstructions(recipeNum) {
             document.getElementById("instructions").innerHTML = myJSON.recipes[recipeNum].instructions;
@@ -138,7 +148,14 @@
       </div>
       <h2 id="noteBlock">Notes: <span id="notes"></span></h2>
       <h2>Ingredients:</h2>
-      <h3><span id="ingredients"></span></h3>
+      <div class="row">
+         <div class="col-sm-6">
+            <h3><span id="ingredients1"></span></h3>
+         </div>
+         <div class="col-sm-6">
+            <h3><span id="ingredients2"></span></h3>
+         </div>
+      </div>
       <h2 id="instructionBlock">Instructions:</h2>
       <p><span id="instructions"></span></p>
    </body>
