@@ -57,14 +57,15 @@
                quantity = myJSON.recipes[recipeNum].ingredients[i].quantity;
                ingredient = myJSON.recipes[recipeNum].ingredients[i].ingredient;
                preparation = myJSON.recipes[recipeNum].ingredients[i].preparation;
-               x1 += quantity + " " + ingredient;
-               if (i < myJSON.recipes[recipeNum].ingredients.length / 2) {
+               if ( i < myJSON.recipes[recipeNum].ingredients.length / 2) {
+                  x1 += quantity + " " + ingredient;
                   if (preparation.localeCompare("") != 0) {
                      x1 += " - " + preparation;
                   }
                   x1 += "<br>";
                }
                else {
+                  x2 += quantity + " " + ingredient;
                   if (preparation.localeCompare("") != 0) {
                      x2 += " - " + preparation;
                   }
