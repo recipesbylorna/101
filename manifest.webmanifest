@@ -1,0 +1,21 @@
+{
+   "short_name":"Recipes",
+   "name":"Recipes by Lorna",
+   "description":"Recipe book by Lorna McMurray",
+   "icons":[
+      {
+         "src":"/101/images/icons-192.png",
+         "type":"image/png",
+         "sizes":"192x192"
+      },
+      {
+         "src":"/101/images/icons-512.png",
+         "type":"image/png",
+         "sizes":"512x512"
+      }
+   ],
+   "start_url":"/101/test2.html",
+   "background_color":"#E9FBF7",
+   "display":"standalone",
+   "theme_color":"#34b6d0"
+}
